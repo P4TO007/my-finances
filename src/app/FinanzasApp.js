@@ -101,7 +101,7 @@ export default function FinanzasApp() {
   };
 
   const addTransaction = (tx) => {
-    const newTx = { ...tx, id: Date.now(), date: new Date().toISOString() };
+    const newTx = { ...tx, amount: Number(tx.amount), id: Date.now(), date: new Date().toISOString() };
     const updated = [newTx, ...transactions];
     setTransactions(updated);
     save(updated);
